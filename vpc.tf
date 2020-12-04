@@ -106,5 +106,7 @@ resource "aws_route_table_association" "route_table_assoc_db" {
 
 resource "aws_key_pair" "bastion_key_pair" {
   key_name   = "bastion_key"
-  public_key = file("id_rsa.pub")
+  # Specify a variable instead of fixed key value
+  public_key = file(var.keypair_public_key)
+  # public_key = file("id_rsa.pub")
 }

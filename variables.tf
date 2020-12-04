@@ -36,5 +36,12 @@ variable "azs" {
 
 variable "ec2_ami" {
 	type = string
-	default = "ami-0885b1f6bd170450c"
+	description = "ami to be used for the ec2 instances"
+	# at the time of writing, this was an ami available in us-east-1
+	#default = "ami-0885b1f6bd170450c"
+}
+
+variable "keypair_public_key" {
+	type = string
+	description = "Location of the public key file to be used for the keypair"
 }
